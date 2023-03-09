@@ -1,23 +1,36 @@
 import logo from './logo.svg';
 import './App.css';
+import Profile from './Profile.js';
+import Button from './Button';
+import AvatarProfile from './AvatarProfile';
+import { useEffect, useState } from 'react';
+import ProfileNew from './AvatarNew.js'
 
 function App() {
+  const [changeSize,setChangeSize]=useState(100);
+  useEffect(()=>{
+    setTimeout(() => {
+      setChangeSize(300);
+    }, 7000);
+  },[])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Sayyed Ashfaq</h1>
+      {/* <Button counter=  {1}/>
+      <Button counter=  {2}/>
+      <Button counter=  {5}/>
+      <Profile/>
+      <AvatarProfile 
+
+      person={{name:"Sayyed",
+      imageId:"1bX5QH6"}} 
+      size ={changeSize}
+      />
+      <AvatarProfile person={{name:"Sayyed",imageId:"1bX5QH6"}} size ={100}/>
+      <AvatarProfile person={{name:"Sayyed",imageId:"1bX5QH6"}} size ={changeSize  }/> */}
+      <ProfileNew/>
+      
     </div>
   );
 }
